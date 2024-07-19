@@ -42,7 +42,7 @@ int	count_word(const char *s, char c)
 	return (i);
 }
 
-char	**split(char const *s, char c)
+char	**split_str(char const *s, char c)
 {
 	char	**tab;
 	int	n;
@@ -69,7 +69,7 @@ char	**split(char const *s, char c)
 	return (tab);
 }
 
-void	free_split(char **words)
+void	free_split_str(char **words)
 {
 	int	i;
 	

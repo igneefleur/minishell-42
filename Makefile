@@ -11,7 +11,10 @@ OBJ_FOLD = utils builtins parser
 
 SRC_FILES = minishell.c \
 	utils/compare_str.c \
-	utils/split.c \
+	utils/get_str_len.c \
+	utils/duplicate_str.c \
+	utils/join_str.c \
+	utils/split_str.c \
 \
 	builtins/ms_cd.c \
 	builtins/ms_echo.c \
@@ -21,6 +24,8 @@ SRC_FILES = minishell.c \
 	builtins/ms_pwd.c \
 	builtins/ms_unset.c \
 \
+	parser/command.c \
+	parser/command_table.c \
 	parser/parser.c
 
 LIBS = $(addprefix $(LIB_PATH),$(LIB_NAME))
