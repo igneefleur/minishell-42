@@ -7,7 +7,7 @@ LFLAGS = -lreadline
 INC_PATH = .
 SRC_PATH = ./src/
 OBJ_PATH = ./obj/
-OBJ_FOLD = utils builtins parser
+OBJ_FOLD = utils builtins parser test
 
 SRC_FILES = minishell.c \
 	utils/compare_str.c \
@@ -26,7 +26,11 @@ SRC_FILES = minishell.c \
 \
 	parser/command.c \
 	parser/command_table.c \
-	parser/parser.c
+	parser/parser.c \
+\
+	test/hub_exec.c \
+	test/str_dup.c \
+	test/str_len.c \
 
 LIBS = $(addprefix $(LIB_PATH),$(LIB_NAME))
 SRCS = $(addprefix $(SRC_PATH),$(SRC_FILES))

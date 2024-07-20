@@ -15,6 +15,9 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <signal.h>
+# include <unistd.h>
+# include <string.h>
 # include <readline/readline.h>
 # include <readline/history.h>
 
@@ -48,6 +51,8 @@ typedef struct s_parser
 {
 	char			*redirection_in;
 	char			*redirection_out;
+	char			**envp; //contient l'env parent
+	//env ici sa peut pose des problemes peu etre dans l'execution ?
 	t_command_table	*command_table;
 } t_parser;
 
@@ -86,6 +91,17 @@ void			print_table(t_command_table *command_table);
 
 
 // parser/parser.c
-t_minishell		parser(t_minishell minishell, char *line);
+t_minishell		parser(t_minishell minishell, char *line, char **envp);
+
+
+//exec/hub_exec.c/init
+void	hub_exec(t_parser *data, char **envp);
+int		init_ex_utils(t_parser *data, char **env);
+void	init_envp(t_parser *data, char **env);
+
+//utils/ex
+
+char	*ft_strdup(char *s);
+int		ft_strlen(char *str);
 
 #endif
