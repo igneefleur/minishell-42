@@ -12,6 +12,7 @@
 
 #include "minishell.h"
 
+/*
 
 int	is_char_in_str(int c, char *s)
 {
@@ -187,5 +188,35 @@ t_minishell	parser(t_minishell minishell, char *line)
 	print_parser(parser);
 
 	// TODO : FREE
+	//hub_exec(parser, envp);
+	return (minishell);
+}
+*/
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+
+////
+
+
+////
+
+t_minishell	parser(t_minishell minishell, char *line)
+{
+	t_string_table	*string_table;
+	t_command_table	*command_table;
+	
+	string_table = new_string_table();
+	string_table = split_with_quotes(string_table, line);
+	string_table = transform_variables(string_table); // TODO
+
+	print_string_table(string_table);
+	command_table = split_with_pipes(string_table);
+	// split_with_redirection
+
 	return (minishell);
 }

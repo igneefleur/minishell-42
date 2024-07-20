@@ -7,13 +7,15 @@ LFLAGS = -lreadline
 INC_PATH = .
 SRC_PATH = ./src/
 OBJ_PATH = ./obj/
-OBJ_FOLD = utils builtins parser
+OBJ_FOLD = utils builtins parser parser/string parser/command parser/redirection
 
 SRC_FILES = minishell.c \
 	utils/compare_str.c \
 	utils/get_str_len.c \
+	utils/find_char_in_str.c \
 	utils/duplicate_str.c \
 	utils/join_str.c \
+	utils/split_simple_str.c \
 	utils/split_str.c \
 \
 	builtins/ms_cd.c \
@@ -24,9 +26,17 @@ SRC_FILES = minishell.c \
 	builtins/ms_pwd.c \
 	builtins/ms_unset.c \
 \
-	parser/command.c \
-	parser/command_table.c \
+	parser/string/string.c \
+	parser/string/string_table.c \
+	parser/command/command.c \
+	parser/command/command_table.c \
+	parser/redirection/redirection.c \
+	parser/redirection/redirection_table.c \
+	parser/split_with_quotes.c \
+	parser/transform_variables.c \
+	parser/split_with_pipes.c \
 	parser/parser.c
+
 
 LIBS = $(addprefix $(LIB_PATH),$(LIB_NAME))
 SRCS = $(addprefix $(SRC_PATH),$(SRC_FILES))

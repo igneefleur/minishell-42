@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   command_table.c                                    :+:      :+:    :+:   */
+/*   redirection_table.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcavaill < tcavaill@student.42perpignan    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,40 +12,40 @@
 
 #include "minishell.h"
 
-t_command_table	*new_table(void)
+t_redirection_table	*new_redirection_table(void)
 {
-	t_command_table	*table;
+	t_redirection_table	*table;
 
-	table = malloc(sizeof(t_command_table));
-	table->command = NULL;
+	table = malloc(sizeof(t_redirection_table));
+	table->redirection = NULL;
 	table->next = NULL;
 	return (table);
 }
 
-void add_command(t_command_table *command_table, t_command *command)
+void add_redirection(t_redirection_table *redirection_table, t_redirection *redirection)
 {
-	t_command_table	*temp;
+	t_redirection_table	*temp;
 
-	temp = command_table;
-	if (command_table->command == NULL)
+	temp = redirection_table;
+	if (redirection_table->redirection == NULL)
 	{
-		command_table->command = command;
+		redirection_table->redirection = redirection;
 		return ;
 	}
 	while (temp->next != NULL)
 		temp = temp->next;
-	temp->next = new_table();
-	add_command(temp->next, command);
+	temp->next = new_redirection_table();
+	add_redirection(temp->next, redirection);
 }
 
-void	print_table(t_command_table *command_table)
+void	print_redirection_table(t_redirection_table *redirection_table)
 {
-	while (command_table->next != NULL)
+	while (redirection_table->next != NULL)
 	{
-		if (command_table->command != NULL)
-			print_command(command_table->command);
-		command_table = command_table->next;
+		if (redirection_table->redirection != NULL)
+			print_redirection(redirection_table->redirection);
+		redirection_table = redirection_table->next;
 	}
-	if (command_table->command != NULL)
-		print_command(command_table->command);
+	if (redirection_table->redirection != NULL)
+		print_redirection(redirection_table->redirection);
 }

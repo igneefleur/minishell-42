@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   command.c                                          :+:      :+:    :+:   */
+/*   redirection.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcavaill < tcavaill@student.42perpignan    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,22 +12,24 @@
 
 #include "minishell.h"
 
-t_command	*new_command(char *command_text, char *arguments)
+t_redirection	*new_redirection(char *filename, int is_output, int is_append)
 {
-	t_command	*command;
+	t_redirection	*redirection;
 
-	command = malloc(sizeof(t_command)); 
-	if (command == NULL)
+	redirection = malloc(sizeof(t_redirection)); 
+	if (redirection == NULL)
 		return (NULL);
-	command->command = command_text;
-	command->arguments = arguments;
-	return (command);
+	redirection->filename = filename;
+	redirection->is_output = is_output;
+	redirection->is_append = is_append;
+	return (redirection);
 }
 
-void	print_command(t_command *command)
+void	print_redirection(t_redirection *redirection)
 {
 	printf("{\n");
-	printf("\tcommand   : %s\n", command->command);
-	printf("\targuments : %s\n", command->arguments);
+	printf("\tfilename  : %s\n", redirection->filename);
+	printf("\tis_output : %d\n", redirection->is_output);
+	printf("\tis_append : %d\n", redirection->is_append);
 	printf("}\n");
 }
