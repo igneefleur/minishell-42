@@ -1,0 +1,357 @@
+s/42/minishell-42 actuel$ ./minishell
+TEST:ok
+{
+	redirection in  : (null)
+	redirection out : (null)
+{
+{
+	command   : ok
+	arguments : (null)
+}
+start hub
+start exec
+parentfinish total
+TEST:ok |test
+{
+	redirection in  : (null)
+	redirection out : (null)
+{
+{
+	command   : ok
+	arguments : (null)
+}
+{
+	command   : test
+	arguments : (null)
+}
+start hub
+start exec
+before children 0
+start children 0
+access: No such file or directory
+^C
+TEST:parentfinish total
+TEST:ok | ls > test
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : ok
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : (null)
+}
+start hub
+start exec
+before children 0
+start children 0
+access: No such file or directory
+^C
+TEST:parentfinish total
+TEST:ok | ls
+{
+	redirection in  : (null)
+	redirection out : (null)
+{
+{
+	command   : ok
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : (null)
+}
+start hub
+start exec
+before children 0
+start children 0
+access: No such file or directory
+^C
+TEST:parentfinish total
+TEST:wc | ls
+{
+	redirection in  : (null)
+	redirection out : (null)
+{
+{
+	command   : wc
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : (null)
+}
+start hub
+start exec
+before children 0
+start children 0
+parentfinish total
+TEST:wc | ls
+{
+	redirection in  : (null)
+	redirection out : (null)
+{
+{
+	command   : wc
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : (null)
+}
+start hub
+start exec
+before children 0
+start children 0
+parentfinish total
+TEST:wc > test| ls
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : wc
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : (null)
+}
+start hub
+start exec
+before children 0
+start children 0
+parentfinish total
+TEST:wc > test | ls
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : wc
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : (null)
+}
+start hub
+start exec
+before children 0
+start children 0
+parentfinish total
+TEST:wc | ls > test
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : wc
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : (null)
+}
+start hub
+start exec
+before children 0
+start children 0
+parentfinish total
+TEST:wc > test | ls > test
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : wc
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : (null)
+}
+start hub
+start exec
+before children 0
+start children 0
+parentfinish total
+TEST:wc > test | wc > test
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : wc
+	arguments : (null)
+}
+{
+	command   : wc
+	arguments : (null)
+}
+start hub
+start exec
+before children 0
+start children 0
+parentfinish total
+TEST:wc > test | ls -l > test
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : wc
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : -l
+}
+start hub
+start exec
+before children 0
+start children 0
+parentfinish total
+TEST:ok | ls -l > test
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : ok
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : -l
+}
+start hub
+start exec
+before children 0
+start children 0
+access: No such file or directory
+^C
+TEST:parentfinish total
+TEST:ls -l | ls -l > test
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : ls
+	arguments : -l
+}
+{
+	command   : ls
+	arguments : -l
+}
+start hub
+start exec
+before children 0
+start children 0
+^C
+TEST:parentfinish total
+TEST:ls | ls -l > test
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : ls
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : -l
+}
+start hub
+start exec
+before children 0
+start children 0
+parentfinish total
+TEST:ls -l | ls -l > test
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : ls
+	arguments : -l
+}
+{
+	command   : ls
+	arguments : -l
+}
+start hub
+start exec
+before children 0
+start children 0
+^C
+TEST:parentfinish total
+TEST:ok | ls -l > test
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : ok
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : -l
+}
+start hub
+start exec
+before children 0
+start children 0
+access: No such file or directory
+^[[A^C
+TEST:parentfinish total
+TEST:ok | ls -l > test
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : ok
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : -l
+}
+start hub
+start exec
+before children 0
+start children 0
+access: No such file or directory
+^C
+TEST:parentfinish total
+TEST:ok | ls -l > test
+{
+	redirection in  : (null)
+	redirection out : test
+{
+{
+	command   : ok
+	arguments : (null)
+}
+{
+	command   : ls
+	arguments : -l
+}
+start hub
+start exec
+before children 0
+start children 0
+access: No such file or directory
+ok
+test |
+^C
+TEST:parentfinish total
+TEST:^C
+TEST:exit

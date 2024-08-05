@@ -176,7 +176,7 @@ void	print_parser(t_parser *parser)
 	print_table(parser->command_table);
 }
 
-t_minishell	parser(t_minishell minishell, char *line)
+t_minishell	parser(t_minishell minishell, char *line, char **envp)
 {
 	t_parser		*parser;
 
@@ -185,7 +185,8 @@ t_minishell	parser(t_minishell minishell, char *line)
 	parser->redirection_out = get_redirection_out(line);
 	parser->command_table = get_command_table(line);
 	print_parser(parser);
-
+	
 	// TODO : FREE
+	hub_exec(parser, envp);
 	return (minishell);
 }
