@@ -1,0 +1,5 @@
+piperedir finish
+checkaccess start
+cmd : wc
+finish children 0
+4

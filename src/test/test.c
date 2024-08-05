@@ -539,6 +539,16 @@ void	ms_echo(char **argv, t_data *data)
 	//	close_redir(argv,/* data,*/ redir);
 }
 
+/*
+void	ms_echo(char *str, int sign)
+{
+	if (sign == 1)
+		printf("%s\n", str);
+	else
+		printf("%s", str);
+}
+*/
+
 /*void	close_redir(char **argv, int redir);
 {
 	close(redir);
@@ -578,3 +588,4 @@ int	main(int argc, char **argv, char **env)
 /* On peut cree une fonction qui pre-parametra tout les redirections entrée - sortie a appeller
 	au debut de la fonction , sa affectera toute les autres interactions(fonction) ensuite
 	grace au parsing on recupere les données possiblement comme dans push_swap  */
+
